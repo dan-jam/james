@@ -1,0 +1,486 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+    color: #336699;
+    cursor: url('images/blue-cursor.png'), url('images/blue-cursor.gif'), auto;
+    background: linear-gradient(45deg, #d6eaff, #ebf5ff, #cce0ff, #ebf5ff, #d6eaff);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+	0%{
+		background-position: 0% 50%;
+	}
+	50%{
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 20px 10%;
+	background: #b2d7ee;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 100;
+}
+
+.logo {
+	position: relative;
+	font-size: 35px;
+	color: #336699;
+	text-decoration: none;
+	font-weight: 850;
+}
+
+.logo::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background: #b2d7ee;
+	animation: showRight 1.5s ease forwards;
+	animation-delay: .5s;
+}
+
+@keyframes showRight {
+    100% {
+        width: 0;
+    }
+}
+
+.navbar a {
+	font-size: 18px;
+	color: #336699;
+	text-decoration: none;
+	font-weight: 500;
+	margin-left: 35px;
+	transition: .3s;
+	position: relative;
+}
+
+.navbar a::after{
+	content: '';
+	height: 3px;
+	width: 0;
+	background: #00ABF0;
+	position: absolute;
+	left: 0;
+	bottom: -10px;
+	transition: 0.5s;
+}
+
+.navbar a:hover::after{
+	width: 100%;
+}
+
+.navbar a:hover, .navbar a.active {
+  color: #00ABF0;
+}
+
+.overview {
+    height: 100vh;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    padding: 50px 10%;
+    position: relative; 
+}
+
+.overview-img {
+    flex: 0 0 40%;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+	top: 10%;
+}
+
+.overview-img img {
+    position: relative;
+    left: 6.5%;
+    transform: translate(-15%);
+    width: 350px;
+    opacity: 0; 
+    animation: slideIn 2s ease-out forwards; 
+    transition: transform 0.3s ease, filter 0.3s ease;  
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-30%) scale(0.9);  
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);  
+    }
+}
+
+.overview-img:hover img {
+    transform: translate(-10%, 0) scale(1.05);
+    filter: drop-shadow(10px 10px 5px rgba(0, 171, 240, 0.5)); 
+}
+
+.overview-content {
+    flex: 1;
+}
+
+.overview-content h1, .overview-content h3, .overview-content p {
+    opacity: 0;
+    transform: translateX(-30%);  
+    animation: slideInText 2s ease-out forwards;  
+}
+
+@keyframes slideInText {
+    0% {
+        opacity: 0;
+        transform: translateX(-30%) scale(0.9); 
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);  
+    }
+}
+
+.overview-content h1 {
+    margin-top: 20%;
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.overview-content h3 {
+    font-size: 35px;
+    font-weight: 800;
+    text-align: left;
+    color: #00ABF0;
+}
+
+.overview-content p {
+    font-size: 20px;
+    margin: 20px 0 40px;
+    text-indent: 3em;
+    text-align: justify;
+    margin-right: 17.5%;
+}
+
+
+.overview-content h1 {
+    margin-top: 20%;
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.overview-content h3 {
+    font-size: 35px;
+    font-weight: 800;
+    text-align: left;
+    color: #00ABF0;
+}
+
+.overview-content p {
+    font-size: 20px;
+    margin: 20px 0 40px;
+    text-indent: 3em;
+    text-align: justify;
+    margin-right: 17.5%;
+}
+
+::-webkit-scrollbar{
+	width: 15px;
+}
+
+::-webkit-scrollbar-thumb{
+	background-color: #00ABF0;
+}
+
+::-webkit-scrollbar-track{
+	background: #DCDCDC;
+	width: 35px;
+}
+
+.about{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 5.5% 10%;
+	gap: 5em;
+	background: transparent;
+}
+
+.about-img img{
+	position: relative;
+	width: 355px;
+	border-radius: 70%;
+	transition: transform 0.3s ease-in-out;
+}
+
+.about-img:hover img {
+    transform: scale(0.9);
+}
+
+.about-content h1 {
+	text-align: left;
+	color: #336699;
+	font-size: 35.5px;
+}
+
+.about-content h2{
+	text-align: left;
+	color: #336699;
+	font-size: 45px;
+}
+
+.about-content h3 {
+	font-size: 45px;
+}
+
+.about-content h3 span{
+	color: #00ABF0;
+}
+
+.about-content p{
+	color: #336699;
+	font-size: 18px;
+	font-weight: 400;
+	margin: 10px 0 10px;
+	text-indent: 3em; 
+	text-align: justify;
+}
+
+.about-content span{
+	color: #00ABF0;
+}
+
+
+.hobbies-skills {
+    text-align: center;
+    background-color: transparent;
+}
+
+.hobbies-skills p {
+	color: #336699;
+    font-weight: 650;
+	font-size: 25px;
+}
+
+.hobbies-skills h2 {
+	color: #00ABF0;
+	font-size: 35px;
+	font-weight: 750;
+	margin-bottom: 5.5px;
+}
+
+.hobby-item, .skill-item {
+    display: inline-block;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    position: relative; 
+}
+
+.hobby-item img, .skill-item img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    background-color: #00ABF0;
+    z-index: 1; 
+    transition: transform 0.3s ease-in-out;
+}
+
+.hobby-item .description, .skill-item .description {
+	border-radius: 2.5%;
+	font-size: 17px;
+	/*
+	text-align: justify;
+	text-indent: 2em;
+	*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    background-color: #D1E8FF;
+    padding: 10px;
+    opacity: 0;
+    z-index: 2; 
+    transition: opacity 0.3s ease-in-out;
+}
+
+.hobby-item:hover .description, .skill-item:hover .description {
+    opacity: 1;
+}
+
+.hobby-item:hover img, .skill-item:hover img {
+    transform: scale(1.1);
+}
+
+.footer {
+    background-color: #b2d7ee;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 5% 5%;
+    flex-wrap: wrap; 
+}
+
+.footer-content {
+    flex: 1; 
+    text-align: left;
+    margin: 0 30px; 
+    max-width: 300px;	
+}
+
+.footer-content p {
+    text-indent: 1em;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: justify;
+    max-width: 250px;
+}
+
+.footer-content span {
+    font-weight: 800;
+}
+
+.footer-logo {
+    font-size: 30px;
+    text-decoration: none;
+    font-weight: 850;
+	text-align: center;
+	flex-basis: 100%;
+}
+
+.copyright {
+    font-size: 15px;
+    text-align: center; 
+    flex-basis: 100%; 
+}
+
+.copyright span {
+	font-weight: 700;
+}
+
+.social-media {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 0 30px;
+	max-width: 300px;
+}
+
+.social-media h3 {
+	align-items: flex-end;
+    font-size: 20px;
+	margin-bottom: 5px;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+}
+
+.social-media a {
+	display: inline-block;
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #336699;
+    border-radius: 50%;
+    font-size: 30px;
+    color: #336699;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .social-media a:hover {
+  color: #ebf5ff;
+}
+
+.footer .social-media a:hover::before {
+  width: 100px;
+}
+
+.footer .social-media a:hover {
+  background: #00ABF0;
+  color: white;
+}
+
+/*
+.about-content span {
+	color: transparent;
+	-webkit-text-stroke: 3px #00ABF0;
+	position: relative;
+	font-size: 45.5px;
+	
+}
+
+.about-content span::before {
+	content: "Daniel James P. Abobo";
+	position: absolute;
+	width: 0%;
+	height: 100%;
+	overflow: hidden;
+	color: #336699;
+	transition: 1s ease-in-out;
+}
+
+.about-content span:hover::before {
+	width: 100%;
+	filter: drop-shadow (0 0 25px #336699);
+}
+*/
+
+.my-future {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 5.5% 10%;
+	background: transparent;
+	text-align: center;
+	position: relative;
+}
+
+.future {
+	width: 680px;
+	border-radius: 1.5%;
+	box-shadow: 0 0 10px #00ABF0,
+				0 0 10px #00ABF0; 
+	position: relative;
+}
+
+.future-content h4 {
+	font-size: 35px;
+	color: #336699;
+	text-align: center;
+	margin-bottom: 2.5%;
+}
